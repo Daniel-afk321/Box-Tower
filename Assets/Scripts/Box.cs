@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Box : MonoBehaviour
 {
+    
     public Text scoreText;
     public Color32[] gameColors = new Color32[4];
     public Material BoxMat;
     public GameObject GameOverPanel;
+    
 
     private const float Bounds_size = 3.5f;
     private const float Box_Moving_Speed = 5.0f;
@@ -32,6 +34,7 @@ public class Box : MonoBehaviour
 
     private Vector3 desiredPosition;
     private Vector3 lastTilePosition;
+    private AudioSource audioSource;
 
     private void Start()
     {
@@ -45,6 +48,9 @@ public class Box : MonoBehaviour
            
 
         boxIndex = transform.childCount - 1;
+
+        audioSource = GetComponent<AudioSource>();
+        
     }
 
     private void CreateRubble(Vector3 pos, Vector3 scale)
@@ -69,6 +75,7 @@ public class Box : MonoBehaviour
                 SpawnTile();
                 scoreCount++;
                 scoreText.text = scoreCount.ToString ();
+                audioSource.Play();
 
             }
             else
@@ -232,11 +239,15 @@ public class Box : MonoBehaviour
             PlayerPrefs.SetInt("score", scoreCount);
         GameOver = true;
         GameOverPanel.SetActive(true);
+        audioSource.Play();
         box[boxIndex].AddComponent<Rigidbody>();
     }
     public void OnButtonClick(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        
     }
+
+   
 }
    
