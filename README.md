@@ -60,13 +60,18 @@ Dependencias e libs que o usuário deve ter instalados na máquina para rodar a 
 ## Como rodar a aplicação 
 1. Abaixe o aplicativo no Link que está em Distribuição.
 
+
 2.faca a instalação do (app) no celular
+
 
 3. Entre no aplicativo.
 
+
 4.para iniciar basta apenas clicar no botão Play.
 
+
 5.clique na tela para que os blocos poção ficar na torre, assim tente o maior número de blocos em uma torre.
+
 
 6.quando morrer utilize o botão restart para iniciar o game ou o botão Menu para voltar para o menu e ver sua maior pontuação
 
